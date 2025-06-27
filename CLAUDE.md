@@ -7,14 +7,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Setup
 ```bash
 # Install dependencies 
-cd tuner
+cd rails-tuning
 bundle install
 ```
 
 ### Database Operations
 ```bash
 # Create and migrate the database
-cd tuner
+cd rails-tuning
 rails db:create
 rails db:migrate
 
@@ -25,49 +25,49 @@ rails db:seed
 ### Development
 ```bash
 # Start the Rails server
-cd tuner
+cd rails-tuning
 rails server
 
 # Start the Rails console
-cd tuner
+cd rails-tuning
 rails console
 ```
 
 ### Testing
 ```bash
 # Run all tests
-cd tuner
+cd rails-tuning
 rails test
 
 # Run specific test file
-cd tuner
+cd rails-tuning
 rails test test/path/to/file_test.rb
 
 # Run specific test
-cd tuner
+cd rails-tuning
 rails test test/path/to/file_test.rb:line_number
 ```
 
 ### Linting and Security Analysis
 ```bash
 # Run RuboCop for style checking
-cd tuner
+cd rails-tuning
 bin/rubocop
 
 # Run Brakeman for security analysis
-cd tuner
+cd rails-tuning
 bin/brakeman
 ```
 
 ### Docker
 ```bash
 # Build the Docker image
-cd tuner
-docker build -t tuner .
+cd rails-tuning
+docker build -t rails-tuning .
 
 # Run the application in Docker
-cd tuner
-docker run -p 3000:3000 tuner
+cd rails-tuning
+docker run -p 3000:3000 rails-tuning
 ```
 
 ## Code Architecture
@@ -77,7 +77,7 @@ The Rails-Tuning project is designed to be a Ruby on Rails application for exper
 ### Project Structure
 
 - **Root directory**: Contains basic setup for the Rails tuning project
-- **tuner/**: The main Rails application
+- **rails-tuning/**: The main Rails application
   - API-only Rails application (ActionController::API)
   - Uses SQLite3 as the database
   - Uses Puma as the web server

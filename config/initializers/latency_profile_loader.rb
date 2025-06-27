@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 # config/initializers/latency_profile_loader.rb
-LATENCY_PROFILE = {}
+LATENCY_PROFILE = {}.freeze
 
 begin
   config_file = Rails.root.join('config', 'latency_profile.yml')
@@ -10,7 +12,7 @@ begin
     Rails.logger.info "Latency profile loaded successfully: #{LATENCY_PROFILE.inspect}"
 
     # Validate required keys
-    required_keys = [:max, :p99, :p95, :p90, :p75, :p50]
+    required_keys = %i[max p99 p95 p90 p75 p50]
     missing_keys = required_keys.reject { |key| LATENCY_PROFILE.key?(key) }
 
     if missing_keys.any?

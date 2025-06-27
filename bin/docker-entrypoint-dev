@@ -5,7 +5,9 @@ if [ "${1}" == "./bin/rails" ] && [ "${2}" == "server" ]; then
   ./bin/rails db:prepare
 fi
 
-list="rails"
+bundle install
+
+list="rails rubocop brakeman"
 
 # Set Rails ENV to test if running rspec
 if [ "${1}" == "rspec" ]; then
@@ -13,7 +15,7 @@ if [ "${1}" == "rspec" ]; then
   export RAILS_ENV=test
   bundle exec "${@:1}"
 elif [[ $list =~ (^|[[:space:]])"${1}"($|[[:space:]]) ]]; then
-  echo "rails : ${@}"
+  echo "bundle exec ${@}"
   bundle exec "${@}"
 fi
 
